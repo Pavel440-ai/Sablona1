@@ -1,0 +1,90 @@
+/* Svetlá téma - základné štýly */
+body.light {
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+body.light header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+body.light .main-menu li a {
+    color: #333333;
+}
+
+body.light .theme-btn {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Kontajnery */
+body.light .container1 {
+    background-color: #ffffff;
+}
+
+/* Pozdravný text */
+body.light .greeting-box h3 {
+    color: #333333;
+    background-color: rgba(0,0,0,0.05);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Portfólio */
+body.light .portfolio {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333333;
+    transition: all 0.3s ease;
+}
+
+body.light .portfolio:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.light .portfolio .text-white {
+    color: #333333 !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+body.light .portfolio::before {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Akordeón */
+body.light .question {
+    background-color: #f7f7f7;
+    color: #333333;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light .accordion.active .answer {
+    background-color: #ffffff;
+    color: #555555;
+    border-left: 3px solid #6c757d;
+}
+
+body.light .question:hover,
+body.light .accordion.active .question {
+    background-color: #e9ecef;
+}
+
+body.light .question::before {
+    color: #6c757d;
+}
+
+body.light .accordion.active .question::before {
+    color: #dc3545;
+}
+
+/* Všeobecné štýly pre obe témy */
+.container2 {
+    padding: 3% 10% 3% 10%;
+    transition: background-color 0.3s ease;
+}

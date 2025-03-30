@@ -1,14 +1,14 @@
 
 .slides-container {
-  position: relative;  
+  position: relative;
   width: 100%;
   max-width: 100%;
   height: auto;
-  
+
 }
 .slide, .slide img{
-    width:100%;   
-    height: auto; 
+    width:100%;
+    height: auto;
 }
 .prev, .next {
   cursor: pointer;
@@ -54,6 +54,6 @@
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }

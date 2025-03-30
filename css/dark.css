@@ -1,0 +1,125 @@
+/* Dark theme - základné štýly */
+body.dark {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+body.dark header {
+    background-color: #2d2d2d !important;
+    border-bottom: 1px solid #404040;
+}
+
+body.dark .main-menu li a {
+    color: #fff;
+}
+
+body.dark .theme-btn {
+    box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+}
+
+/* Kontajnery */
+body.dark .container1 {
+    background-color: #121212;
+}
+
+/* Pozdravný text */
+body.dark .greeting-box h3 {
+    color: #E0E0E0;
+    background-color: rgba(255,255,255,0.1);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Portfólio */
+body.dark .portfolio {
+    background-color: rgba(18, 18, 18, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark .portfolio:hover {
+    background-color: rgba(30, 30, 30, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .container2 {
+    padding:3% 10% 3% 10%;
+    background-color: #121212;
+}
+
+body.dark .portfolio .text-white {
+    position: relative;
+    z-index: 2;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 12px 24px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+body.dark .portfolio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Akordeón */
+body.dark .question {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    padding: 2%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+body.dark .accordion.active .answer {
+    display: block;
+    background-color: #1e1e1e;
+    color: #b0b0b0;
+    padding: 2%;
+    border-left: 3px solid #4fc3f7;
+}
+
+body.dark .question:hover,
+body.dark .accordion.active .question {
+    background-color: #3a3a3a;
+    cursor: pointer;
+}
+
+body.dark .question::before {
+    content: '+ ';
+    color: #4fc3f7;
+    font-weight: bold;
+}
+
+body.dark .accordion.active .question::before {
+    content: '- ';
+    color: #ff5252;
+}
+
+body.dark .answer {
+    transition: all 0.3s ease-out;
+}
+
+body.dark .accordion {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
