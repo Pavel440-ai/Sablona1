@@ -1,35 +1,38 @@
 function initSlider() {
-  let idx = 1;
+  let idx = 0;
   const slides = document.getElementsByClassName("slide");
-  const prev = document.getElementById("prev");
-  const next = document.getElementById("next");
+  const container = document.querySelector(".slides-container");
+  const inner = document.createElement("div");
 
-  // Funkcia na zobrazenie konkrétneho slídu
-  function show(n) {
-    // Kontrola hraníc
-    if (n > slides.length) idx = 1;
-    if (n < 1) idx = slides.length;
+  inner.className = "slides-inner";
+  Array.from(slides).forEach(slide => {
+    inner.appendChild(slide.cloneNode(true));
+    slide.remove();
+  });
+  container.prepend(inner);
 
-    // Skrytie všetkých slidov
-    Array.from(slides).forEach(slide => {
-      slide.style.display = "none";
+  updateSlider();
+
+  function updateSlider() {
+    inner.style.transform = `translateX(-${idx * 100}%)`;
+    Array.from(inner.children).forEach((slide, index) => {
+      slide.classList.toggle("active", index === idx);
     });
+  }
 
-    // Zobrazenie aktuálneho slídu
-    if (slides[idx - 1]) {
-      slides[idx - 1].style.display = "block";
+  document.getElementById("prev").addEventListener("click", () => {
+    idx = (idx - 1 + slides.length) % slides.length;
+    updateSlider();
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    if (idx === slides.length - 1) {
+      idx = 0;
+    } else {
+      idx++;
     }
-  }
-
-  // Posun na ďalší/predchádzajúci slide
-  function nextSlide(n) {
-    show(idx += n);
-  }
-
-  // Event listeners pre tlačidlá
-  prev.addEventListener("click", () => nextSlide(-1));
-  next.addEventListener("click", () => nextSlide(1));
-
-  // Inicializácia: zobraziť prvý slide
-  show(idx);
+    updateSlider();
+  });
 }
+
+document.addEventListener('DOMContentLoaded', initSlider);
